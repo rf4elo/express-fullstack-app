@@ -1,6 +1,6 @@
 import e from "express";
 import path from "path";
-import productRoutes from "./src/routes/productRoutes";
+import productRoutes from "./routes/productRoutes";
 
 
 const app = e();
@@ -18,8 +18,11 @@ app.use(e.json());
 
 
 // APPLICATION ROUTES
-app.use('/', produtoRoutes);
+app.use('/api', productRoutes);
 
 
 export default app;
 
+
+
+// TERMINAR DE FAZER AS ROTAS RESTANTES DE API, CONECTAR COM BANCO DE DADOS E UTILIZAR PROXY PARA VERIFICAR ADMIN E CLIENT
