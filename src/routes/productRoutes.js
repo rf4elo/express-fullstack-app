@@ -8,6 +8,6 @@ const productRoutes = Router();
 
 productRoutes.get('/products', productController.GetAllProductsController );
 productRoutes.get('/products/:id', productController.GetOneProductController );
-
+productRoutes.post('/products', ValidateProducts, productController.CreateProductController );
 
 export default productRoutes;

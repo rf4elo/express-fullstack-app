@@ -12,3 +12,8 @@ export async function GetOneProduct(id) {
     return product;
 }
 
+export async function CreateProduct(product) {
+    if(!product) throw new Error("Invalid product model.");
+    products_db.push(product);
+    return product;
+}
