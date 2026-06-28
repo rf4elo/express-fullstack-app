@@ -1,6 +1,5 @@
-import { ProductModel } from "../models/productModel";
-import { products_db } from "../config/database";
-
+import { ProductModel } from "../models/productModel.js";
+import { products_db } from "../config/database.js";
 
 
 export async function GetAllProducts() {
@@ -8,7 +7,7 @@ export async function GetAllProducts() {
 }
 
 export async function GetOneProduct(id) {
-    const product = products_db.find(p => p.id == id);
+    const product = await products_db.find(p => p.id == id);
     if(!product) throw new Error("Product not found.");
     return product;
 }

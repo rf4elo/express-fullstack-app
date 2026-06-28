@@ -11,7 +11,7 @@ export const products_db = [
         "id":2,
         "name":"SSD Kingston NV3 500GB M2 2280 NVME PCIe 4.0 Gen 4x4 Ultra Rápido",
         "description":"Capacity: 500Gb, M.2 2280, PCIe 4.0, NVMe",
-        "price":0
+        "price":718.99
     }
 ];
 

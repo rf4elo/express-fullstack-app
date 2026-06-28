@@ -1,6 +1,6 @@
 import e from "express";
 import path from "path";
-import productRoutes from "./routes/productRoutes";
+import productRoutes from "./routes/productRoutes.js";
 
 
 const app = e();
@@ -8,8 +8,8 @@ const app = e();
 
 // FRONT END SETTINGS
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
-app.use(e.static(path.join(__dirname, 'public')));
+app.set('views', path.join('../', 'views'));
+app.use(e.static(path.join('../', 'public')));
 
 
 // BACKEND MIDDLEWARES
