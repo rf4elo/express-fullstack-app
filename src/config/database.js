@@ -15,3 +15,12 @@ export const products_db = [
     }
 ];
 
+export const users_db = [
+    {
+        "id": 1,
+        "name": "ADMIN",
+        "email": "admin@gmail.com",
+        "password": "$2b$12$KuhIEvaBjbUS3DfMcEgH2e.dpz0DfrjKb8ugkGA4fCpAPUqEtpj4m"
+    }
+];
+

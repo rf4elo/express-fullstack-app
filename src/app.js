@@ -1,6 +1,7 @@
 import e from "express";
 import path from "path";
 import productRoutes from "./routes/productRoutes.js";
+import usersRoutes from "./routes/userRoutes.js";
 
 
 const app = e();
@@ -17,8 +18,14 @@ app.use(e.urlencoded({ extended: true }));
 app.use(e.json());
 
 
-// APPLICATION ROUTES
+// ROUTES 
+
+// PRODUCT ROUTES
 app.use('/api', productRoutes);
+
+// USERS ROUTES
+app.use('/api', usersRoutes);
+
 
 
 export default app;
