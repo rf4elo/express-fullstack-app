@@ -3,5 +3,5 @@ import app from "./src/app.js";
 const PORT = 8080;
 
 app.listen(PORT, () => {
-    console.log(`Servidor rodando em http://localhost:${PORT}`);
+    console.log(`Server running in http://localhost:${PORT}`);
 });

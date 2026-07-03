@@ -1,6 +1,6 @@
 import * as usersServices from "../services/usersService.js";
 import { UserModel } from "../models/userModel.js";
-import { HashPassword } from "../utils/hashPassword.js";
+import { Hash } from "../utils/hash.js";
 
 
 export async function GetAllUsersController(req, res) {
@@ -26,7 +26,7 @@ export async function CreateUserController(req, res) {
     try {
         const { name, email, password } = req.body;
 
-        const securePassword = await HashPassword(password);
+        const securePassword = await Hash(password);
         const userModel = new UserModel(name, email, securePassword);
 
         const CreateUserRes = await usersServices.CreateUser(userModel);

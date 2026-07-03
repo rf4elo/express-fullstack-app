@@ -1,14 +1,13 @@
 import * as bcrypt from "bcrypt";
 
 
-export async function HashPassword(password) {
+export async function Hash(text) {
 
     const saltRounds = 12;
 
-    const HashPassword = await bcrypt.hash(password, saltRounds);
+    const HashText = await bcrypt.hash(text, saltRounds);
 
-    return HashPassword;
-
+    return HashText;
 }
 
 export async function CompareHash(password, HashPassword) {
