@@ -38,6 +38,7 @@ app.get('/', (req, res) => {
 
 });
 
+// USERS ROUTES
 app.get('/users', async (req, res) => {
 
     const response = await fetch("http://localhost:80/api/users", {
@@ -49,10 +50,36 @@ app.get('/users', async (req, res) => {
 
     const users = await response.json();
 
-    res.render('../views/pages/users.ejs', users);
+    const pageData = {
+        "title":"Users",
+        "users": await users.sort((a, b) => a.id - b.id)
+    }
+
+    res.render('../views/pages/users.ejs', pageData);
+
+});
+app.get('/users/:id', async (req, res) => {
+    const { id } = await req.params;
+
+    const response = await fetch(`http://localhost/api/users/${id}`, {
+        method: "GET",
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+    const data = await response.json();
+
+    const pageData = {
+        "title":data.name,
+        "user":data
+    };
+
+    res.render('../views/pages/user.ejs', pageData);
 
 });
 
+
+// PRODUCTS ROUTES
 app.get('/products', async (req, res) => {
 
     const response = await fetch('http://localhost/api/products', {
@@ -68,6 +95,8 @@ app.get('/products', async (req, res) => {
         "title": "Products",
         "products": products,
     };
+
+    // ORDENAR ITEMS EM ORDEM CRESCENTE DE ID
 
     res.render('../views/pages/products.ejs', pageData);
 

@@ -3,24 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products</title>
+    <title>Express App Front-End | <%= title %></title>
     <link rel="stylesheet" href="/css/style.css" >
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
     
     <%- include('../partials/header') %>
 
-    <main class="products-page" >
+    <main class="products-page page-content" >
 
-        <h1><% title %></h1>
+        <h1><%= title %></h1>
 
-        <% products.map(p => { %>
-            <div class="product-card" >
-                <h1><%= p.name %></h1>
-                <p><%= p.description %></p>
-                <span>Price: R$ <%= p.price %></span>
-            </div>
-        <% }); %>
+        <div class="flex-box" >
+            <% products.map(p => { %>
+                <div class="product-card" >
+                    <h1><%= p.name %></h1>
+                    <p><%= p.description %></p>
+                    <span>Price: R$ <%= p.price %></span>
+                </div>
+            <% }); %>
+        </div>
+
     </main>
 </body>
 </html>

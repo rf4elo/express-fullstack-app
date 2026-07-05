@@ -1,17 +1,18 @@
 
-
+/* VARIABLES */
 :root {
     --color-primary: #013;
     --color-secondary: #78f;
-    --color-terciary: #56d;
 }
 
+/* DEFAULT FORMATING */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* BODY FORMATING */
 body {
     background-color: var(--color-primary);
     color: white;
@@ -25,6 +26,7 @@ body {
     gap: 12px;
 }
 
+/* HEADER */
 .header {
     color: var(--color-secondary);
     /* background-color: var(--color-secondary);
@@ -77,6 +79,7 @@ body {
     };
 }
 
+/* HOME PAGE - MAIN */
 .main-index {
     background-color: var(--color-secondary);
     color: var(--color-primary);
@@ -87,6 +90,109 @@ body {
     text-align: center;
 }
 
+/* PRODUCTS PAGE FORMATING */
 .products-page {
     color: var(--color-secondary);
+
+    & > h1 {
+        text-align: center;
+        font-size: 2.4rem;
+        
+        padding: 16px 0;
+
+        border-bottom: 2px solid;
+        border-image: linear-gradient(to right, transparent, var(--color-secondary), transparent) 1;
+    };
+
+    & > .flex-box {
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+    }
+}
+
+.product-card {
+    width: 80%;
+    border-bottom: 2px solid;
+    border-image: linear-gradient(to right, transparent, var(--color-secondary), transparent) 1;
+    padding: 16px 0;
+}
+
+/* USERS PAGE FORMATING */
+.users-page {
+    color: var(--color-secondary);
+
+    & > h1 {
+        text-align: center;
+        font-size: 2.4rem;
+
+        padding: 16px 0;
+
+        border-bottom: 2px solid;
+        border-image: linear-gradient(to right, transparent, var(--color-secondary), transparent) 1;
+    };
+
+    & > .grid-div {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+
+        padding: 12px;
+
+        & > .user-card {
+            border: 2px solid var(--color-secondary);
+
+            padding: 12px;
+            border-radius: 12px;
+
+            text-align: center;
+
+            cursor: pointer;
+
+            transition: 0.4s all ease;
+            &:hover {
+                background-color: var(--color-secondary);
+                color: var(--color-primary);
+            };
+        };
+    };
+}
+
+/* USER PAGE */
+.user-page {
+    color: var(--color-secondary);
+    text-align: center;
+
+    border: 2px solid var(--color-secondary);
+    border-radius: 12px;
+
+    padding: 12px;
+}
+
+/* PAGE TRANSITION */
+.page-content {
+    view-transition-name: page-content;
+}
+
+@view-transition {
+    navigation: auto;
+}
+@keyframes slide-out {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+@keyframes slide-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+::view-transition-group(page-content) {
+    animation-duration: 0.4s;
+}
+::view-transition-old(page-content) {
+    animation-name: slide-out;
+}
+::view-transition-new(page-content) {
+    animation-name: slide-in;
 }
