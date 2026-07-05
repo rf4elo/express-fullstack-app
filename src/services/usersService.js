@@ -3,7 +3,7 @@ import { users_db } from "../config/database.js";
 
 
 export async function GetAllUsers() {
-    return users_db;
+    return users_db.sort((a, b) => a.id - b.id);
 }
 
 export async function GetOneUser(id) {

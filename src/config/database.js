@@ -24,4 +24,3 @@ export const users_db = [
         "password": "$2b$12$KuhIEvaBjbUS3DfMcEgH2e.dpz0DfrjKb8ugkGA4fCpAPUqEtpj4m"
     }
 ];
-

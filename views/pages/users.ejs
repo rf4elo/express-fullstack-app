@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express App Front-End | <%= title %></title>
+    <link rel="stylesheet" href="/css/style.css" >
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <%- include('../partials/header') %>
+
+    <main class="users-page page-content" >
+
+        <h1><%= title %></h1>
+
+        <div class="grid-div" >
+            
+            <% users.map(u => { %>
+                <div class="user-card" >
+                    <h2><%= u.name %></h2>
+                    <h2><%= u.role %></h2>
+                    <h2><%= u.id %></h2>
+                </div>
+            <% }) %>
+            
+        </div>
+    </main>
+</body>
+</html>
