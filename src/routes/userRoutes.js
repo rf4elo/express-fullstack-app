@@ -9,6 +9,7 @@ const usersRoutes = Router();
 usersRoutes.get('/users', UsersController.GetAllUsersController );
 usersRoutes.get('/users/:id', UsersController.GetOneUserController);
 usersRoutes.post('/users', ValidateUsers, UsersController.CreateUserController);
-
+usersRoutes.patch('/users/:id', UsersController.UpdateUserController );
+usersRoutes.delete('/users/:id', UsersController.DeleteUserController );
 
 export default usersRoutes;

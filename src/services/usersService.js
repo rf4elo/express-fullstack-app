@@ -21,3 +21,28 @@ export async function CreateUser(user) {
     return user;
 };
 
+export async function UpdateUser(id, updatedUser) {
+    const userIndex = await users_db.findIndex(u => u.id == id);
+
+    if(userIndex == -1) throw new Error("User not found.");
+
+    if(!updatedUser) throw new Error("Invalid user model.");
+
+    users_db[userIndex] = {
+        ...users_db[userIndex],
+        ...updatedUser
+    };
+
+    return users_db[userIndex];
+};
+
+export async function DeleteUser(id) {
+    const deletedUser = await users_db.find(u => u.id == id);
+    const userIndex = await users_db.findIndex(u => u.id == id);
+
+    if(!deletedUser) throw new Error("User not found");
+
+    await users_db.splice(userIndex, 1);
+
+    return deletedUser;
+};
