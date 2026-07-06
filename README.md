@@ -1,31 +1,49 @@
 # Express Full-Stack App
 
-## How to use
+[![licence mit](https://img.shields.io/badge/licence-MIT-blue.svg)](./LICENSE)
 
-1. Install dependences
+## Project structure
+- `./public` is the folder that contains all the application's static files (images, CSS files, front-end JS files).
+- `./views` is project's frontend.
+    - `./views/pages` are the project pages.
+    - `./views/partials` are the reusable components.
+    - `./views/index.ejs` is the frontend main page.
+- `./src` is the project's back-end.
+    - `./src/services` is the pure backend logic.
+    - `./src/controller` is responsible for the backend logic. It connects the logic to its respective route.
+    - `./src/routes` are the project routes.
+
+## Requirements for executing the project
+
+### Environment setup:
+- [Node v24 LTS](https://nodejs.org/en/download)
+
+
+### How do I run this on my machine?
+- Clone the repository
 ```bash
-npm install
-# or
-npm i
+git clone https://github.com/rf4elo/express-fullstack-app.git
 ```
 
-2. Run the application
+- Install dependences
+```bash
+npm install
+```
 
+- Run the project
 ```bash
 # Normal mode
 npm run start
 
-# Watch mode
+# Or watch mode
 npm run start:watch
 ```
 
-## Run the tests
-The tests are not configured, but if you configure them, you can run them with:
+## Project License
 
-```bash
-# Normal mode
-npm run test
+- [MIT License](./LICENSE)
 
-# Watch mode
-npm run test:watch
-```
+## Professional contact
+
+- [Linkedin](https://www.linkedin.com/in/rafael-j-rocha/)
+- [Github](https://github.com/rf4elo)
